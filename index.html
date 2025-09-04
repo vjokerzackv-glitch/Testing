@@ -4,7 +4,277 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Akshara Public School</title>
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* Sticky Full-Width Header Bar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background-color: white;
+      z-index: 999;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Header container to align content */
+    .navbar .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Logo Styling */
+    .logo img {
+      height: 50px;
+      object-fit: contain;
+    }
+
+    /* Nav Links */
+    .nav-links {
+      display: flex;
+    }
+
+    .nav-links a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: #1a3dd3;
+    }
+
+    /* Hamburger Menu - hidden checkbox */
+    .nav-toggle {
+      display: none;
+    }
+
+    /* Hamburger icon styling */
+    .hamburger {
+      display: none; /* default hidden on desktop */
+      flex-direction: column;
+      cursor: pointer;
+      width: 25px;
+      height: 20px;
+      justify-content: space-between;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 3px;
+      background-color: #333;
+      border-radius: 2px;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #1a3dd3;
+      color: white;
+      padding: 3rem 2rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 280px;
+      margin-right: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+      line-height: 1.3;
+    }
+
+    .hero-text h1 span {
+      font-weight: bold;
+    }
+
+    .hero-text p {
+      margin: 1rem 0;
+      font-size: 1rem;
+      max-width: 500px;
+    }
+
+    /* Email input */
+    .hero-text input[type="email"] {
+      width: 100%;
+      max-width: 320px;
+      padding: 0.6rem 1rem;
+      margin-bottom: 1rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    .hero-text button {
+      background-color: #fcb900;
+      color: black;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      max-width: 320px;
+    }
+
+    /* Hero Image */
+    .hero-image {
+      flex: 1;
+      min-width: 280px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    /* About Section */
+    .about {
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .about-btn {
+      background-color: #ebf20f;
+      border: none;
+      padding: 0.5rem 1.2rem;
+      font-weight: bold;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+      cursor: pointer;
+    }
+
+    .about h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .about p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1rem;
+      color: #444;
+    }
+
+    /* ===== Responsive Mobile ===== */
+    @media (max-width: 768px) {
+
+      /* Show hamburger */
+      .hamburger {
+        display: flex;
+      }
+
+      /* Hide nav-links by default on mobile */
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: white;
+        position: absolute;
+        top: 60px; /* adjust based on header height */
+        left: 0;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        z-index: 1000;
+      }
+
+      .nav-links a {
+        margin: 10px 1rem;
+        padding: 0.5rem 0;
+        font-size: 1.1rem;
+        border-bottom: 1px solid #eee;
+      }
+
+      /* When checkbox is checked, show nav links */
+      .nav-toggle:checked + .hamburger + .nav-links {
+        display: flex;
+      }
+
+      /* Navbar container layout */
+      .navbar .container {
+        padding: 1rem;
+      }
+
+      /* Stack hero section vertically */
+      .hero {
+        flex-direction: column;
+        padding: 2rem 1rem;
+      }
+
+      .hero-text {
+        margin-right: 0;
+        margin-bottom: 2rem;
+        align-items: center;
+      }
+
+      .hero-text h1 {
+        font-size: 2rem;
+        text-align: center;
+      }
+
+      .hero-text p {
+        max-width: 100%;
+        font-size: 1rem;
+        text-align: center;
+      }
+
+      .hero-text input[type="email"],
+      .hero-text button {
+        max-width: 100%;
+        width: 100%;
+      }
+
+      /* Hero image full width */
+      .hero-image {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .hero-img {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      /* About section padding */
+      .about {
+        padding: 3rem 1rem;
+      }
+
+      .about h2 {
+        font-size: 1.75rem;
+      }
+
+      .about p {
+        font-size: 1rem;
+        padding: 0 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -46,7 +316,11 @@
         At Akshara public school, we provide exceptional education that nurtures 
         creativity, critical thinking, and character development in every student.
       </p>
-      <button>Apply Now</button>
+
+      <!-- Email input -->
+      <input type="email" id="user-email" placeholder="Enter your email" required />
+
+      <button id="apply-btn">Apply Now</button>
     </div>
     <div class="hero-image">
       <img src="https://placehold.co/300x300?text=School+Image" alt="School Image" class="hero-img"/>
@@ -65,5 +339,46 @@
     </p>
   </section>
 
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
+
+  <script>
+    (function() {
+      emailjs.init("YOUR_USER_ID"); // Replace with your EmailJS user ID
+    })();
+
+    document.getElementById('apply-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+
+      const userEmail = document.getElementById('user-email').value.trim();
+
+      if (!userEmail) {
+        alert("Please enter your email.");
+        return;
+      }
+
+      // Optional: Basic email format validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(userEmail)) {
+        alert("Please enter a valid email address.");
+        return;
+      }
+
+      const templateParams = {
+        to_email: userEmail,
+        from_email: "v.jokerzack.v@gmail.com",
+        message: "Thank you for applying to Akshara Public School!",
+      };
+
+      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+        .then(function(response) {
+          alert('Application email sent successfully!');
+          document.getElementById('user-email').value = ''; // Clear input after success
+        }, function(error) {
+          alert('Failed to send email. Please try again later.');
+          console.error('EmailJS error:', error);
+        });
+    });
+  </script>
 </body>
 </html>
