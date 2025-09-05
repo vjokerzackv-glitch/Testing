@@ -1,17 +1,60 @@
-/* ====== Reset & Base Styles ===== */
+/* ===== Reset & Base Styles ===== */
+* /* Add this to your CSS file or within a <style> tag */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
-  padding: 5px; 
-  line-height: 1.6;
+  font-family: Arial, sans-serif;
+  padding-top: 20px; /* To avoid header overlap */
 }
+
+.logo {
+display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: flex-start;
+    margin-left: 10px; }
+
+.logo img {
+   /* Adjust the logo size */
+  height: auto;
+border-radius: 30px;
+float: left; /* Align logo to the left */
+  margin-left: 0;
+  margin-right: 10px; /* Space between logo and text */
+}
+
+h1 {
+  font-size: 24px;
+  color: #333; /* Dark color for text */
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .logo img {
+    width: 62px; /* Slightly smaller logo for mobile */
+  }
+  
+  h1 {
+    font-size: 20px; /* Adjust text size on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    width: 62px; /* Even smaller logo for very small screens */
+  }
+  
+  h1 {
+    font-size: 18px; /* Adjust text size further for small screens */
+  }
+}
+
 
 /* ===== Sticky Navbar ===== */
 .navbar {
@@ -31,10 +74,13 @@ body {
   justify-content: space-between;
   align-items: center;
   position: relative;
+height:77px;
+
+
 }
 
 .logo img {
-  height: 50px;
+  height: 62px;
   object-fit: contain;
 }
 
@@ -125,7 +171,8 @@ body {
   flex: 1;
   min-width: 280px;
   display: flex;
-  justify-content: center;
+  height:350px;
+  justify-content: right;
 }
 
 .hero-img {
@@ -380,124 +427,90 @@ body {
   }
 }
 
-/* Faculty Section Styling */
+
+
+.hero-image:hover img {
+  transform: scale(1.1);
+}
+
+.hero-image img {
+ 
+  object-fit: cover;
+  border-radius: 8px 8px 8px 8px;
+  transition: transform 0.3s ease;
+  transform-origin: center center;
+}
+
+
+/* Faculty Section */
 .faculty-section {
-  text-align: center;
-  padding: 60px 20px;
-  margin: 0 20px; /* Add margin to left and right of the section */
+    text-align: center;
+    padding: 60px 20px;
+    margin: 0 20px;
+    /* Ensure section takes full width */
+    overflow: hidden; /* Hide the overflow to prevent bottom scrollbar */
 }
 
-.faculty-section h2 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.faculty-section p {
-  font-size: 1rem;
-  color: #666;
-  margin-bottom: 40px;
-  font-style: italic;
-}
-
-/* Faculty Slider with padding for left and right */
+/* Faculty Slider (container for scrolling) */
 .faculty-slider {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: nowrap;
-  overflow-x: hidden; /* Prevent horizontal scrollbars */
-  padding-bottom: 20px;
-  padding-left: 10px;  /* Add padding left */
-  padding-right: 10px; /* Add padding right */
-  scroll-snap-type: x mandatory;
-  transition: transform 0.5s ease; /* Smooth transition */
+    display: flex; /* Enable flexbox */
+    justify-content: flex-start; /* Align items at the start */
+    gap: 20px; /* Space between the cards */
+    overflow-x: hidden; /* Hide overflowed content */
+    width: 100%; /* Ensure full width */
+    scroll-snap-type: x mandatory; /* Smooth snapping while scrolling */
+    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS devices */
+    animation: scrollSlider 15s linear infinite; /* Apply animation for auto-scrolling */
 }
 
-/* Faculty Cards */
+/* Faculty Card Styling */
 .faculty-card {
-  flex: 0 0 auto;
-  width: 180px; /* Make sure cards have consistent width */
-  text-align: center;
-  scroll-snap-align: center;
-  margin: 0 10px; /* Add margin to avoid clipping */
+    flex: 0 0 auto; /* Prevent flex items from stretching */
+    width: 180px; /* Width of each card */
+    text-align: center;
+    scroll-snap-align: center; /* Align card to the center when scrolled */
+    margin: 0 10px; /* Space around the card */
 }
 
 .faculty-card img {
-  width: 100%;
-  height: 180px; /* Make images fit nicely within the card */
-  object-fit: cover; /* Prevent image stretching */
-  border-radius: 50%; /* Make images circular */
-  margin-bottom: 15px;
+    width: 100%;
+    height: 180px;
+    object-fit: cover; /* Crop image if necessary to fill the card */
+    border-radius: 50%; /* Circular image */
+    margin-bottom: 15px;
 }
 
 .faculty-card h3 {
-  font-size: 1.05rem;
-  font-weight: 600;
-  margin-bottom: 4px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 4px;
 }
 
 .faculty-card a {
-  font-size: 0.95rem;
-  color: #2c5ec9;
-  text-decoration: none;
-  display: block;
-  margin-bottom: 6px;
+    font-size: 0.95rem;
+    color: #2c5ec9;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
 }
 
 .faculty-card p {
-  font-size: 0.9rem;
-  color: #444;
-  margin: 0;
+    font-size: 0.9rem;
+    color: #444;
+    margin: 0;
 }
 
-/* Scrollbar hidden */
+/* Hide scrollbar in webkit browsers */
 .faculty-slider::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
-.faculty-slider {
-  -ms-overflow-style: none;  /* IE & Edge */
-  scrollbar-width: none;     /* Firefox */
+/* Keyframes for automatic scroll */
+@keyframes scrollSlider {
+    0% {
+        transform: translateX(0); /* Start at the left */
+    }
+    100% {
+        transform: translateX(-100%); /* Move to the left by the full width of the container */
+    }
 }
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .faculty-card {
-    width: 160px; /* Adjust card width on tablets */
-  }
-
-  .faculty-card img {
-    height: 160px; /* Adjust image size on tablets */
-  }
-
-  .faculty-section h2 {
-    font-size: 1.8rem;
-  }
-
-  .faculty-section p {
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .faculty-card {
-    width: 140px; /* Adjust card width on mobile */
-  }
-
-  .faculty-card img {
-    height: 140px; /* Adjust image size on mobile */
-  }
-
-  .faculty-card h3 {
-    font-size: 1rem;
-  }
-
-  .faculty-card a,
-  .faculty-card p {
-    font-size: 0.85rem;
-  }
-}
-
-
-
