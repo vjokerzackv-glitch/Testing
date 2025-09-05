@@ -1,4 +1,4 @@
-let currentIndex = 0;
+/* let currentIndex = 0;
 const facultySlider = document.querySelector('.faculty-slider');
 const facultyCards = document.querySelectorAll('.faculty-card');
 const totalCards = facultyCards.length;
@@ -24,4 +24,4 @@ function slideCards() {
   currentIndex++;
 }
 
-setInterval(slideCards, 1000); // Change slide every 3 seconds
+setInterval(slideCards, 1000); // Change slide every 3 seconds */
