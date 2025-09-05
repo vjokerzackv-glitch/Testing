@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Akshara Public School</title>
   <link rel="stylesheet" href="styles.css" />
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
 </head>
 <body>
 
@@ -16,9 +18,7 @@
         <img src="https://placehold.co/150x50?text=Akshara+Logo" alt="Akshara Logo" />
       </div>
 
-      <!-- Hamburger input checkbox -->
       <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-      <!-- Hamburger icon label -->
       <label for="nav-toggle" class="hamburger" aria-label="Toggle navigation">
         <span></span>
         <span></span>
@@ -46,14 +46,10 @@
         At Akshara public school, we provide exceptional education that nurtures 
         creativity, critical thinking, and character development in every student.
       </p>
-
-     
-     
-
-      <button id="apply-btn">Apply Now</button>
+      <button>Apply Now</button>
     </div>
     <div class="hero-image">
-      <img src="https://placehold.co/300x300?text=School+Image" alt="School Image" class="hero-img"/>
+      <img src="https://placehold.co/300x300?text=School+Image" alt="School Image" class="hero-img" />
     </div>
   </section>
 
@@ -68,13 +64,136 @@
       sprawling campus of 4 acres and provides peaceful learning environment.
     </p>
   </section>
+ <div class="school-images">
+    <img src="C:\Users\yogesh.veerakumar\Downloads\illustration-of-high-school-building-school-building-free-vector.jpg" alt="School Image 1" class="school-image" />
+    <img src="C:\Users\yogesh.veerakumar\Downloads\pexels-137666-710743.jpg" alt="School Image 2" class="school-image" />
+    <img src="C:\Users\yogesh.veerakumar\Downloads\OIP.webp" alt="School Image 3" class="school-image" />
+    <img src="C:\Users\yogesh.veerakumar\Downloads\Fashion-Private-School-Dresses-Uniform-School-Uniform-for-Kids.avif" alt="School Image 4" class="school-image" />
+  </div>
 
-  <!-- EmailJS SDK -->
-  <script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
+  <!-- Facilities Section -->
+  <section class="facilities-section">
+    <h2>Our Facilities</h2>
+    <p class="facilities-subtitle">We provide world-class facilities to ensure better learning & growth</p>
+    <div class="facilities-grid">
+      <div class="facility-card">
+        <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Smart Classrooms" />
+        </div>
+        <h3>Smart Classrooms</h3>
+        <p>Immersive digital learning spaces</p>
+      </div>
+
+      <div class="facility-card">
+        <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=400&q=80" alt="Free & Safe Transport" />
+        </div>
+        <h3>Free & Safe Transport</h3>
+        <p>Your child's safety is our priority</p>
+      </div>
+
+      <div class="facility-card">
+        <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=400&q=80" alt="State of Art Library" />
+        </div>
+        <h3>State of Art Library</h3>
+        <p>Vast collection of books & collections</p>
+      </div>
+
+      <div class="facility-card">
+        <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Nutritious Meals" />
+        </div>
+        <h3>Nutritious Meals</h3>
+        <p>Healthy food for growing minds</p>
+      </div>
+
+      <div class="facility-card">
+        <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Computer Lab" />
+        </div>
+        <h3>Computer Lab</h3>
+        <p>Latest technology and internet-enabled</p>
+      </div>
+
+      <div class="facility-card">
+        <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80" alt="Science Lab" />
+        </div>
+        <h3>Science Lab</h3>
+        <p>Hands-on experiments with modern tools</p>
+      </div>
+
+      <div class="facility-card">
+        <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Playground" />
+        </div>
+        <h3>Playground</h3>
+        <p>Spacious area for sports and activities</p>
+      </div>
+
+      <div class="facility-card">
+        <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1468071174046-657d9d351a40?auto=format&fit=crop&w=400&q=80" alt="Activity Center" />
+        </div>
+        <h3>Activity Center</h3>
+        <p>Creative learning through arts and crafts</p>
+      </div>
+    </div>
+  </section>
+
+ <section class="faculty-section">
+  <h2>Our Faculty</h2>
+  <p><em>Meet our dedicated team for educators and administrators</em></p>
+  
+  <div class="faculty-slider">
+    <div class="faculty-card">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. Sarah Johnson" />
+      <h3>Dr. Sarah Johnson</h3>
+      <a href="#">Principal</a>
+      <p>Ph.D. in Educational Leadership<br>20+ years experience</p>
+    </div>
+
+    <div class="faculty-card">
+      <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Dr. David Chen" />
+      <h3>Dr. David Chen</h3>
+      <a href="#">Vice-Principal</a>
+      <p>Ph.D. in English Literature</p>
+    </div>
+
+    <div class="faculty-card">
+      <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Dr. Sam Patel" />
+      <h3>Dr. Sam Patel</h3>
+      <a href="#">Math Department Head</a>
+      <p>MS Mathematics Graduate</p>
+    </div>
+
+    <div class="faculty-card">
+      <img src="https://randomuser.me/api/portraits/women/40.jpg" alt="Ms. Jane Lee" />
+      <h3>Ms. Jane Lee</h3>
+      <a href="#">Science Teacher</a>
+      <p>MS in Physics</p>
+    </div>
+
+    <div class="faculty-card">
+      <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Dr. Sam Patel" />
+      <h3>Ms. Jane Lee</h3>
+      <a href="#">Science Teacher</a>
+      <p>MS in Physics</p>
+    </div>
+
+<div class="faculty-card">
+      <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Dr. David Chen" />
+      <h3>Dr. David Chen</h3>
+      <a href="#">Vice-Principal</a>
+      <p>Ph.D. in English Literature</p>
+    </div>
+
+  </div>
+</section>
+
+
+
   <script src="script.js"></script>
-
 </body>
 </html>
-
-
-
