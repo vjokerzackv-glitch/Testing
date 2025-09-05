@@ -1,4 +1,4 @@
-/* Resets */
+/* ===== Reset & Base Styles ===== */
 * {
   margin: 0;
   padding: 0;
@@ -6,12 +6,14 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
   color: #333;
+  padding: 20px;
+  line-height: 1.6;
 }
 
-/* Sticky Full-Width Header Bar */
+/* ===== Sticky Navbar ===== */
 .navbar {
   position: sticky;
   top: 0;
@@ -21,7 +23,6 @@ body {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Header container to align content */
 .navbar .container {
   max-width: 1200px;
   margin: auto;
@@ -32,7 +33,6 @@ body {
   position: relative;
 }
 
-/* Logo Styling */
 .logo img {
   height: 50px;
   object-fit: contain;
@@ -54,14 +54,13 @@ body {
   color: #1a3dd3;
 }
 
-/* Hamburger Menu - hidden checkbox */
+/* Hamburger */
 .nav-toggle {
   display: none;
 }
 
-/* Hamburger icon styling */
 .hamburger {
-  display: none; /* default hidden on desktop */
+  display: none;
   flex-direction: column;
   cursor: pointer;
   width: 25px;
@@ -76,7 +75,7 @@ body {
   border-radius: 2px;
 }
 
-/* Hero Section */
+/* ===== Hero Section ===== */
 .hero {
   display: flex;
   justify-content: space-between;
@@ -111,17 +110,6 @@ body {
   max-width: 500px;
 }
 
-/* Email input */
-.hero-text input[type="email"] {
-  width: 100%;
-  max-width: 320px;
-  padding: 0.6rem 1rem;
-  margin-bottom: 1rem;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-}
-
 .hero-text button {
   background-color: #fcb900;
   color: black;
@@ -133,7 +121,6 @@ body {
   max-width: 320px;
 }
 
-/* Hero Image */
 .hero-image {
   flex: 1;
   min-width: 280px;
@@ -147,7 +134,7 @@ body {
   border-radius: 8px;
 }
 
-/* About Section */
+/* ===== About Section ===== */
 .about {
   text-align: center;
   padding: 4rem 2rem;
@@ -175,24 +162,109 @@ body {
   color: #444;
 }
 
-/* ===== Responsive Mobile ===== */
-@media (max-width: 768px) {
+/* ===== Facilities Section ===== */
+.facilities-section {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
 
-  /* Show hamburger */
+.facilities-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.facilities-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.facilities-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.facility-card {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  width: calc(25% - 20px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.image-wrapper {
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+  transition: transform 0.3s ease;
+  transform-origin: center center;
+}
+
+/* Only image zooms on hover */
+.image-wrapper:hover img {
+  transform: scale(1.1);
+}
+
+.facility-card h3 {
+  font-size: 1.2rem;
+  margin: 15px;
+  font-weight: 600;
+}
+
+.facility-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0 15px 15px;
+}
+
+/* ===== Responsive Styles ===== */
+@media (max-width: 992px) {
+  .facility-card {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 600px) {
+  .facility-card {
+    width: 100%;
+  }
+
+  .facilities-section h2 {
+    font-size: 2rem;
+  }
+
+  .facilities-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* ===== Mobile Navigation ===== */
+@media (max-width: 768px) {
   .hamburger {
     display: flex;
   }
 
-  /* Hide nav-links by default on mobile */
   .nav-links {
     display: none;
     flex-direction: column;
     width: 100%;
     background: white;
     position: absolute;
-    top: 60px; /* adjust based on header height */
+    top: 60px;
     left: 0;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     z-index: 1000;
   }
 
@@ -203,17 +275,14 @@ body {
     border-bottom: 1px solid #eee;
   }
 
-  /* When checkbox is checked, show nav links */
   .nav-toggle:checked + .hamburger + .nav-links {
     display: flex;
   }
 
-  /* Navbar container layout */
   .navbar .container {
     padding: 1rem;
   }
 
-  /* Stack hero section vertically */
   .hero {
     flex-direction: column;
     padding: 2rem 1rem;
@@ -236,13 +305,11 @@ body {
     text-align: center;
   }
 
-  .hero-text input[type="email"],
   .hero-text button {
     max-width: 100%;
     width: 100%;
   }
 
-  /* Hero image full width */
   .hero-image {
     width: 100%;
     justify-content: center;
@@ -253,7 +320,6 @@ body {
     max-width: 300px;
   }
 
-  /* About section padding */
   .about {
     padding: 3rem 1rem;
   }
@@ -267,4 +333,168 @@ body {
     padding: 0 1rem;
   }
 }
+/* ===== Responsive Images Section ===== */
+.school-images {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Adds spacing between the images */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Ensures the images wrap on smaller screens */
+}
 
+.school-image {
+  width: 200px; /* Smaller width for images */
+  height: 200px; /* Set height to maintain aspect ratio */
+  border-radius: 8px;
+  object-fit: cover; /* Ensures images maintain aspect ratio while filling the container */
+  transition: transform 0.3s ease; /* Adds a zoom effect on hover */
+}
+
+.school-image:hover {
+  transform: scale(1.1); /* Zoom effect when hovering over an image */
+}
+
+/* ===== Responsive Layout for Mobile & Tablets ===== */
+@media (max-width: 768px) {
+  .school-images {
+    gap: 10px; /* Smaller gap between images */
+  }
+
+  .school-image {
+    width: 200px; /* Adjust size for mobile */
+    height: 200px; /* Adjust height for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .school-images {
+    flex-direction: column; /* Stack the images vertically on very small screens */
+    align-items: center; /* Center align images */
+  }
+
+  .school-image {
+    width: 200px; /* Adjust size further for mobile */
+    height: 200px; /* Adjust height for mobile */
+    margin-bottom: 10px; /* Adds space between stacked images */
+  }
+}
+
+/* Faculty Section Styling */
+.faculty-section {
+  text-align: center;
+  padding: 60px 20px;
+  margin: 0 20px; /* Add margin to left and right of the section */
+}
+
+.faculty-section h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.faculty-section p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 40px;
+  font-style: italic;
+}
+
+/* Faculty Slider with padding for left and right */
+.faculty-slider {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: nowrap;
+  overflow-x: hidden; /* Prevent horizontal scrollbars */
+  padding-bottom: 20px;
+  padding-left: 10px;  /* Add padding left */
+  padding-right: 10px; /* Add padding right */
+  scroll-snap-type: x mandatory;
+  transition: transform 0.5s ease; /* Smooth transition */
+}
+
+/* Faculty Cards */
+.faculty-card {
+  flex: 0 0 auto;
+  width: 180px; /* Make sure cards have consistent width */
+  text-align: center;
+  scroll-snap-align: center;
+  margin: 0 10px; /* Add margin to avoid clipping */
+}
+
+.faculty-card img {
+  width: 100%;
+  height: 180px; /* Make images fit nicely within the card */
+  object-fit: cover; /* Prevent image stretching */
+  border-radius: 50%; /* Make images circular */
+  margin-bottom: 15px;
+}
+
+.faculty-card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.faculty-card a {
+  font-size: 0.95rem;
+  color: #2c5ec9;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.faculty-card p {
+  font-size: 0.9rem;
+  color: #444;
+  margin: 0;
+}
+
+/* Scrollbar hidden */
+.faculty-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.faculty-slider {
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .faculty-card {
+    width: 160px; /* Adjust card width on tablets */
+  }
+
+  .faculty-card img {
+    height: 160px; /* Adjust image size on tablets */
+  }
+
+  .faculty-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .faculty-section p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .faculty-card {
+    width: 140px; /* Adjust card width on mobile */
+  }
+
+  .faculty-card img {
+    height: 140px; /* Adjust image size on mobile */
+  }
+
+  .faculty-card h3 {
+    font-size: 1rem;
+  }
+
+  .faculty-card a,
+  .faculty-card p {
+    font-size: 0.85rem;
+  }
+}
