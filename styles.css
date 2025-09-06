@@ -5,88 +5,76 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
 body {
   font-family: Arial, sans-serif;
-  padding-top: 20px; /* To avoid header overlap */
+  padding-top: 20px; /* Avoid header overlap */
+  margin: 0; /* Ensure no extra margin around body */
 }
 
 .logo {
-display: flex;
-    align-items: center;
-    padding: 10px;
-    justify-content: flex-start;
-    margin-left: 10px; }
-
-.logo img {
-   /* Adjust the logo size */
-  height: auto;
-border-radius: 30px;
-float: left; /* Align logo to the left */
-  margin-left: 0;
-  margin-right: 10px; /* Space between logo and text */
-}
-
-h1 {
-  font-size: 24px;
-  color: #333; /* Dark color for text */
-  line-height: 1.2;
-}
-
-@media (max-width: 768px) {
-  .logo img {
-    width: 62px; /* Slightly smaller logo for mobile */
-  }
-  
-  h1 {
-    font-size: 20px; /* Adjust text size on mobile */
-  }
-}
-
-@media (max-width: 480px) {
-  .logo img {
-    width: 62px; /* Even smaller logo for very small screens */
-  }
-  
-  h1 {
-    font-size: 18px; /* Adjust text size further for small screens */
-  }
-}
-
-
-/* ===== Sticky Navbar ===== */
-.navbar {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  background-color: white;
-  z-index: 999;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  
-}
-
-.navbar .container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 1rem 2rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  position: relative;
-height:77px;
-  background-color:#939393;
-
-
+  justify-content: flex-start;
+  padding: 10px;
+  margin-left: 0;
 }
 
 .logo img {
   height: 62px;
   object-fit: contain;
+  border-radius: 30px;
+  margin-right: 10px;
 }
 
-/* Nav Links */
+h1 {
+  font-size: 24px;
+  color: #333;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .logo img {
+    width: 62px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    width: 50px;
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+}
+
+/* Sticky Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #939393;
+  z-index: 999;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 0; /* Remove padding to avoid extra space */
+}
+
+.navbar .container {
+  width: 100%; /* Full width */
+  margin: 0; /* Ensure no margins */
+  padding: 1rem 2rem; /* Adjust padding */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:grey;
+}
+
 .nav-links {
   display: flex;
 }
@@ -101,6 +89,7 @@ height:77px;
 .nav-links a:hover {
   color: #1a3dd3;
 }
+
 
 /* Hamburger */
 .nav-toggle {
@@ -398,6 +387,7 @@ height:77px;
   border-radius: 8px;
   object-fit: cover; /* Ensures images maintain aspect ratio while filling the container */
   transition: transform 0.3s ease; /* Adds a zoom effect on hover */
+transform: rotate(5deg); 
 }
 
 .school-image:hover {
@@ -428,6 +418,50 @@ height:77px;
     margin-bottom: 10px; /* Adds space between stacked images */
   }
 }
+
+
+
+.school-image1 {
+  width: 200px; /* Smaller width for images */
+  height: 200px; /* Set height to maintain aspect ratio */
+  border-radius: 8px;
+  object-fit: cover; /* Ensures images maintain aspect ratio while filling the container */
+  transition: transform 0.3s ease; /* Adds a zoom effect on hover */
+transform: rotate(-5deg); 
+}
+
+.school-image1:hover {
+  transform: scale(1.1); /* Zoom effect when hovering over an image */
+}
+
+/* ===== Responsive Layout for Mobile & Tablets ===== */
+@media (max-width: 768px) {
+  .school-images {
+    gap: 10px; /* Smaller gap between images */
+  }
+
+  .school-image1 {
+    width: 200px; /* Adjust size for mobile */
+    height: 200px; /* Adjust height for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .school-images {
+    flex-direction: column; /* Stack the images vertically on very small screens */
+    align-items: center; /* Center align images */
+  }
+
+  .school-image1 {
+    width: 200px; /* Adjust size further for mobile */
+    height: 200px; /* Adjust height for mobile */
+    margin-bottom: 10px; /* Adds space between stacked images */
+  }
+}
+
+
+
+
 
 
 
@@ -764,7 +798,7 @@ height:77px;
   width: 100%;
   height: 180px;
   object-fit: cover;
-  border-radius: 8px 8px 0 0;
+  border-radius: 8px 8px 8px 8px;
   transition: transform 0.3s ease;
   transform-origin: center center;
 }
@@ -1059,3 +1093,60 @@ height:77px;
   animation: fadeLeftToRight 0.6s ease-out forwards;
 }
 
+/* Facilities Section Layout */
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+  gap: 20px;
+  padding: 20px;
+}
+
+/* For mobile devices (under 768px) */
+@media (max-width: 768px) {
+  .facilities-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+  }
+}
+
+/* For very small screens (under 480px) */
+@media (max-width: 480px) {
+  .facilities-grid {
+    grid-template-columns: 1fr; /* 1 column on very small screens */
+  }
+}
+
+.facility {
+  position: relative;
+  background-color: #fff;
+  padding-top: 60%; /* Adjust this to control the image height */
+  padding-bottom: 20px; /* Space for text */
+  border-radius: 10px;
+ 
+  text-align: center;
+  overflow: hidden; /* Ensures the image stays inside the container */
+}
+
+.facility img {
+  position: absolute;
+  top: -30px; /* Move the image up */
+  left: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ensures the image covers the container while preserving aspect ratio */
+  border-radius: 10px;
+}
+
+.facility h3 {
+  margin-top: 20px;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.facility p {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 5px;
+}
+
+.img1 img{transform: rotate(-5deg)}
+.img2 img{transform: rotate(-5deg)}
