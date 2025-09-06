@@ -1131,7 +1131,7 @@ height:77px;
   top: -30px; /* Move the image up */
   left: 0;
   width: 100%;
-  height: auto;
+  
   object-fit: cover; /* Ensures the image covers the container while preserving aspect ratio */
   border-radius: 10px;
 }
@@ -1150,3 +1150,4 @@ height:77px;
 
 .img1 img{transform: rotate(-5deg)}
 .img2 img{transform: rotate(-5deg)}
+
